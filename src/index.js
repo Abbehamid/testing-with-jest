@@ -20,7 +20,7 @@ window.onload = function () {
         display.innerHTML = x;
     });
 
-    peek.addEventListener("click", function() {
+    peek.addEventListener("click", function () {
         let top = stack.peek();
         display.innerHTML = top !== undefined ? top : "n/a";
     });

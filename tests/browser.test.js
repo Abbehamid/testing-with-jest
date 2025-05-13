@@ -35,9 +35,21 @@ describe('Clicking "Pusha till stacken"', () => {
     });
 });
 test('peek shows "n/a" if stack is empty', async () => {
+    // Klicka på pop-knappen upprepade gånger för att tömma stacken
+    for (let i = 0; i < 5; i++) {
+        try {
+            let pop = await driver.findElement(By.id('pop'));
+            await pop.click();
+        } catch (err) {
+            break;
+        }
+    }
+
+    // Klicka på peek
     let peek = await driver.findElement(By.id('peek'));
     await peek.click();
 
+    // Kontrollera vad som visas
     let display = await driver.findElement(By.id('top_of_stack')).getText();
     expect(display).toBe("n/a");
 });

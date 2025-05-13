@@ -18,5 +18,6 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 test('pop on empty stack returns undefined', () => {
+    while (stack.pop() !== undefined) {} // töm  först
     expect(stack.pop()).toBeUndefined();
 });
